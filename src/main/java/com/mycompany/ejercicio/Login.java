@@ -4,6 +4,8 @@
  */
 package com.mycompany.ejercicio;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Pablo
@@ -125,7 +127,8 @@ public class Login extends javax.swing.JFrame {
                 new Logueado().setVisible(true);
                 this.dispose();
             } else {
-                System.out.println("incorrecto");
+                JOptionPane.showMessageDialog(rootPane,"usuario o contraseña incorrecta o en su defecto casillas vacias");
+              //  System.out.println("incorrecto");
                 if (cont == 3){
                     this.dispose();
                 }
