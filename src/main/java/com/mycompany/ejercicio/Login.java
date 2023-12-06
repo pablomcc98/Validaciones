@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
 
-    String nombre = "admin";
-    String contra = "12345";
+    String nombre = "usuario", admin ="admin";
+    String contra = "usuario", contra1 = "admin";
     int cont = 0;
 
     /**
@@ -41,9 +41,10 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingresa tu usuario");
 
         usuario.addActionListener(new java.awt.event.ActionListener() {
@@ -52,6 +53,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ingresa tu contraseña");
 
         pass.addActionListener(new java.awt.event.ActionListener() {
@@ -121,12 +124,15 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_usuarioActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-    while(cont <=2 ) {
+    while(cont <=3 ) {
         cont++;
-            if (usuario.getText().equals(nombre) && pass.getText().equals(contra)) {
+            if (usuario.getText().equals(nombre) && pass.getText().equals(contra) ) {
                 new Logueado().setVisible(true);
                 this.dispose();
-            } else {
+            } else if (usuario.getText().equals(admin) && pass.getText().equals(contra1)){
+                 new Admin().setVisible(true); 
+                 this.dispose();
+            } else{
                 JOptionPane.showMessageDialog(rootPane,"usuario o contraseña incorrecta o en su defecto casillas vacias");
               //  System.out.println("incorrecto");
                 if (cont == 3){
