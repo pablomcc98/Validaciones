@@ -119,12 +119,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_usuarioActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-    while(cont <=2) {
+    while(cont <=2 ) {
         cont++;
             if (usuario.getText().equals(nombre) && pass.getText().equals(contra)) {
                 new Logueado().setVisible(true);
+                this.dispose();
             } else {
                 System.out.println("incorrecto");
+                if (cont == 3){
+                    this.dispose();
+                }
             }
             break;
     }
